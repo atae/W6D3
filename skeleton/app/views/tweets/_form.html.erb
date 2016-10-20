@@ -7,13 +7,14 @@
 
   <label>
     Content
-    <textarea name="tweet[content]"></textarea>
+    <textarea id='tweetContent' name="tweet[content]"></textarea>
+    <strong class="chars-left">140 characters remaining</strong>
   </label>
   <br>
 
   <label>
     Mention
-    <select name="tweet[mentioned_user_ids][]">
+    <select id='selectUserIds' name="tweet[mentioned_user_ids][]">
       <option></option>
       <% User.all.each do |user| %>
         <option value="<%= user.id %>"><%= user.username %></option>
